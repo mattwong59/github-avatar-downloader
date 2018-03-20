@@ -25,14 +25,12 @@ getRepoContributors (params[0], params[1], function (err, result) {
   if (params.length == 2) {
     console.log("Errors:" + err);
     result.forEach(function(item) {
-        downloadImageByURL(item.avatar_url, item.login);
-      });
+      downloadImageByURL(item.avatar_url, item.login);
+    });
   } else {
     console.log ("Errors: Incorrect input. Please check and try again.");
   }
-
 });
-
 
 function downloadImageByURL(url, filePath) {
   request.get (url)
